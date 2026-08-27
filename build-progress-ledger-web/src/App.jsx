@@ -20,28 +20,27 @@ const BOOK_COLOR = {
 
 const CHECKPOINTS = [
   { id: "1",     label: "Checkpoint 1",     book: "Book 1", lesson: 5,   maxes: [4, 4, 5, 5] },
-  { id: "2",     label: "Checkpoint 2",     book: "Book 1", lesson: 10,  maxes: [4, 4, 5, 5] },
-  { id: "3",     label: "Checkpoint 3",     book: "Book 1", lesson: 15,  maxes: [8, 8, 10, 5] },
-  { id: "4",     label: "Checkpoint 4",     book: "Book 1", lesson: 20,  maxes: [4, 4, 5, 5] },
-  { id: "5",     label: "Checkpoint 5",     book: "Book 1", lesson: 25,  maxes: [4, 4, 5, 5] },
-  { id: "5alt",  label: "Checkpoint 5 (Alt)", book: "Book 1", lesson: 25, maxes: [4, 4, 5, 5] },
-  { id: "6",     label: "Checkpoint 6",     book: "Book 1", lesson: 30,  maxes: [8, 8, 10, 5] },
-  { id: "7",     label: "Checkpoint 7",     book: "Book 2", lesson: 35,  maxes: [4, 4, 5, 5] },
-  { id: "8",     label: "Checkpoint 8",     book: "Book 2", lesson: 40,  maxes: [4, 4, 5, 5] },
-  { id: "9",     label: "Checkpoint 9",     book: "Book 2", lesson: 45,  maxes: [8, 8, 10, 5] },
-  { id: "10",    label: "Checkpoint 10",    book: "Book 2", lesson: 50,  maxes: [4, 4, 5, 5] },
-  { id: "11",    label: "Checkpoint 11",    book: "Book 2", lesson: 55,  maxes: [4, 4, 5, 5] },
-  { id: "12",    label: "Checkpoint 12",    book: "Book 2", lesson: 60,  maxes: [4, 4, 5, 5] },
-  { id: "13",    label: "Checkpoint 13",    book: "Book 3", lesson: 65,  maxes: [4, 4, 5, 5] },
-  { id: "14",    label: "Checkpoint 14",    book: "Book 3", lesson: 70,  maxes: [4, 4, 5, 5] },
-  { id: "15",    label: "Checkpoint 15",    book: "Book 3", lesson: 75,  maxes: [8, 8, 10, 5] },
-  { id: "16",    label: "Checkpoint 16",    book: "Book 3", lesson: 80,  maxes: [4, 4, 5, 5] },
-  { id: "17",    label: "Checkpoint 17",    book: "Book 3", lesson: 85,  maxes: [4, 4, 5, 5] },
-  { id: "18",    label: "Checkpoint 18",    book: "Book 3", lesson: 90,  maxes: [4, 4, 10, 5] },
-  { id: "19",    label: "Checkpoint 19",    book: "Book 3", lesson: 95,  maxes: [4, 4, 10, 5] },
-  { id: "20",    label: "Checkpoint 20",    book: "Book 3", lesson: 100, maxes: [4, 4, 5, 5] },
-  ];
-
+  { id: "2",     label: "Checkpoint 2",     book: "Book 1", lesson: 10,  maxes: [5, 5, 5, 5] },
+  { id: "3",     label: "Checkpoint 3",     book: "Book 1", lesson: 15,  maxes: [5, 5, 5, 5] },
+  { id: "4",     label: "Checkpoint 4",     book: "Book 1", lesson: 20,  maxes: [5, 5, 5, 5] },
+  { id: "5",     label: "Checkpoint 5",     book: "Book 1", lesson: 25,  maxes: [5, 5, 5, 5] },
+  { id: "5alt",  label: "Checkpoint 5 (Alt)", book: "Book 1", lesson: 25, maxes: [5, 5, 5, 5] },
+  { id: "6",     label: "Checkpoint 6",     book: "Book 1", lesson: 30,  maxes: [5, 5, 5, 5] },
+  { id: "7",     label: "Checkpoint 7",     book: "Book 2", lesson: 35,  maxes: [5, 5, 5, 5] },
+  { id: "8",     label: "Checkpoint 8",     book: "Book 2", lesson: 40,  maxes: [5, 5, 5, 5] },
+  { id: "9",     label: "Checkpoint 9",     book: "Book 2", lesson: 45,  maxes: [5, 5, 5, 5] },
+  { id: "10",    label: "Checkpoint 10",    book: "Book 2", lesson: 50,  maxes: [5, 5, 5, 5] },
+  { id: "11",    label: "Checkpoint 11",    book: "Book 2", lesson: 55,  maxes: [5, 5, 5, 5] },
+  { id: "12",    label: "Checkpoint 12",    book: "Book 2", lesson: 60,  maxes: [5, 5, 5, 5] },
+  { id: "13",    label: "Checkpoint 13",    book: "Book 3", lesson: 65,  maxes: [5, 5, 5, 5] },
+  { id: "14",    label: "Checkpoint 14",    book: "Book 3", lesson: 70,  maxes: [5, 5, 5, 5] },
+  { id: "15",    label: "Checkpoint 15",    book: "Book 3", lesson: 75,  maxes: [5, 5, 5, 5] },
+  { id: "16",    label: "Checkpoint 16",    book: "Book 3", lesson: 80,  maxes: [5, 5, 5, 5] },
+  { id: "17",    label: "Checkpoint 17",    book: "Book 3", lesson: 85,  maxes: [5, 5, 5, 5] },
+  { id: "18",    label: "Checkpoint 18",    book: "Book 3", lesson: 90,  maxes: [5, 5, 10, 5] },
+  { id: "19",    label: "Checkpoint 19",    book: "Book 3", lesson: 95,  maxes: [5, 5, 10, 5] },
+  { id: "20",    label: "Checkpoint 20",    book: "Book 3", lesson: 100, maxes: [5, 5, 5, 5] },
+];
 
 const CP_BY_ID_BASE = Object.fromEntries(CHECKPOINTS.map((c) => [c.id, c]));
 
@@ -71,27 +70,12 @@ const useCheckpoints = () => useContext(CheckpointsContext);
 const ReadOnlyContext = createContext(false);
 const useReadOnly = () => useContext(ReadOnlyContext);
 
-const AREA_LABELS_EARLY = [
+const AREA_LABELS = [
   "Letter/Pattern Recognition",
   "Letter/Pattern Sound",
   "Instant Words",
   "Phonological Awareness",
 ];
-const AREA_LABELS_LATE = [
-  "Letter Pattern Identification",
-  "Word / Sentence Reading",
-  "Instant Words",
-  "Phonological Awareness / Spelling",
-];
-const AREA_LABELS_CHART = [
-  "Letter/Pattern",
-  "Sound / Word Reading",
-  "Instant Words",
-  "Phonological Awareness",
-];
-function areaLabelsFor(cp) {
-  return Number(cp.lesson) >= 50 ? AREA_LABELS_LATE : AREA_LABELS_EARLY;
-}
 const AREA_COLORS = ["#1F3864", "#2E7D32", "#B8860B", "#7B241C"];
 const MASTERY_LINE_COLOR = "#7A4EAB";
 
@@ -693,6 +677,7 @@ function SignedInApp({
           {tab === "mastery" && (
             <MasteryTab
               students={data.students}
+              activeName={activeName}
               masteryLog={data.masteryLog || []}
               onLogResult={upsertMasteryResult}
               onClearResult={clearMasteryResult}
@@ -779,6 +764,9 @@ function AllTeachersModal({ onClose, onView }) {
 /* ============================================================
    AUTH GATE — real email/password accounts via Supabase Auth
    ============================================================ */
+// Flip to true to reopen public account creation.
+const ALLOW_SIGNUP = false;
+
 function AuthGate({ error, setError }) {
   const [mode, setMode] = useState("signin"); // "signin" | "signup"
   const [email, setEmail] = useState("");
@@ -794,6 +782,7 @@ function AuthGate({ error, setError }) {
     if (!email.trim() || !password) { setLocalError("Enter an email and password."); return; }
     if (mode === "signup" && !displayName.trim()) { setLocalError("Enter your name."); return; }
     setBusy(true);
+    if (mode === "signup" && !ALLOW_SIGNUP) { setBusy(false); setLocalError("New account creation is closed."); return; }
     if (mode === "signup") {
       const { data, error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
@@ -895,11 +884,15 @@ function AuthGate({ error, setError }) {
         </div>
         <p className="text-xs text-[#a8a59b] text-center mt-5">
           {mode === "signin" ? (
-            <>New here?{" "}
-              <button onClick={() => { setMode("signup"); setLocalError(""); }} className="text-[#1F3864] underline underline-offset-2">
-                Create an account
-              </button>
-            </>
+            ALLOW_SIGNUP ? (
+              <>New here?{" "}
+                <button onClick={() => { setMode("signup"); setLocalError(""); }} className="text-[#1F3864] underline underline-offset-2">
+                  Create an account
+                </button>
+              </>
+            ) : (
+              <>Accounts are set up by your administrator.</>
+            )
           ) : (
             <>Already have an account?{" "}
               <button onClick={() => { setMode("signin"); setLocalError(""); }} className="text-[#1F3864] underline underline-offset-2">
@@ -1189,7 +1182,7 @@ function LogTab({ students, log, customCheckpoints, onAddCustomCheckpoint, onRem
           <span className="text-xs text-[#6b6a67]">Through Lesson {cp.lesson}</span>
         </div>
         <div className="bg-white p-4 space-y-4">
-        {areaLabelsFor(cp).map((label, i) => (
+          {AREA_LABELS.map((label, i) => (
             <div key={i} className="flex items-center gap-4">
               <span className="text-sm text-[#4a4944] flex-1">{label}</span>
               <input
@@ -1315,6 +1308,94 @@ function AddCheckpointModal({ currentCheckpointId, customCheckpoints, onAdd, onR
 }
 
 /* ============================================================
+   PARENT LETTER — a plain, printable progress summary built
+   entirely from the Mastery tab data. Opens in a new tab so it
+   doesn't collide with the Overview tab's print styles.
+   ============================================================ */
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function groupItems(list) {
+  const names = list.filter((x) => x.skill === "Recognition").map((x) => x.item);
+  const sounds = list.filter((x) => x.skill === "Sound").map((x) => x.item);
+  const words = list.filter((x) => x.skill === "Word").map((x) => x.item);
+  const parts = [];
+  if (names.length) parts.push(`<li><strong>Letter names:</strong> ${esc(names.join(", "))}</li>`);
+  if (sounds.length) parts.push(`<li><strong>Letter sounds:</strong> ${esc(sounds.join(", "))}</li>`);
+  if (words.length) parts.push(`<li><strong>Words:</strong> ${esc(words.join(", "))}</li>`);
+  return parts.join("");
+}
+
+function openParentLetter({ studentName, teacherName, cp, cps, masteryLog, studentId }) {
+  const targetIdx = cps.order.indexOf(cp.id);
+  const introduced = MASTERY_ITEMS.filter((it) => cps.order.indexOf(it.cpId) <= targetIdx);
+
+  const withStatus = introduced.map((it) => {
+    const at = masteredAtId(masteryLog, studentId, it.key, cps.order);
+    const atIdx = at === null ? -1 : cps.order.indexOf(at);
+    return {
+      ...it,
+      masteredNow: atIdx !== -1 && atIdx <= targetIdx,
+      masteredBefore: atIdx !== -1 && atIdx < targetIdx,
+    };
+  });
+
+  const masteredCount = withStatus.filter((x) => x.masteredNow).length;
+  const priorCount = withStatus.filter((x) => x.masteredBefore).length;
+  const newly = withStatus.filter((x) => x.masteredNow && !x.masteredBefore);
+  const practicing = withStatus.filter((x) => !x.masteredNow);
+
+  const total = introduced.length;
+  const opening =
+    targetIdx === 0
+      ? `This is our first checkpoint of the year. So far we have taught ${total} letter names, letter sounds, and instant words, and ${esc(studentName)} has mastered ${masteredCount} of them.`
+      : `So far we have taught ${total} letter names, letter sounds, and instant words. ${esc(studentName)} has mastered ${masteredCount} of them, up from ${priorCount} at the last checkpoint.`;
+
+  const newlySection = newly.length
+    ? `<h3>Newly mastered since the last checkpoint</h3><ul>${groupItems(newly)}</ul>`
+    : "";
+
+  const practicingSection = practicing.length
+    ? `<h3>Still practicing</h3><ul>${groupItems(practicing)}</ul>
+       <p>You can help at home by going over the letters and words in this list together — a few minutes a day makes a real difference.</p>`
+    : `<p>${esc(studentName)} has mastered everything taught so far. Wonderful work — keep reading together at home.</p>`;
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Progress Update — ${esc(studentName)}</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; color: #201F1D; max-width: 6.5in; margin: 0.75in auto; line-height: 1.55; }
+  h1 { font-size: 20pt; margin: 0 0 2px; }
+  h3 { font-size: 12pt; margin: 20px 0 6px; }
+  .meta { font-size: 10pt; color: #6b6a67; margin-bottom: 22px; }
+  ul { margin: 6px 0 0; padding-left: 22px; }
+  li { margin-bottom: 3px; }
+  .sig { margin-top: 34px; }
+  @media print { .noprint { display: none; } }
+  .noprint { margin-bottom: 20px; }
+  button { font: inherit; padding: 6px 14px; cursor: pointer; }
+</style></head><body>
+<div class="noprint"><button onclick="window.print()">Print this letter</button></div>
+<h1>Reading Progress Update</h1>
+<div class="meta">
+  <strong>${esc(studentName)}</strong> &nbsp;·&nbsp; ${esc(cp.label)} — ${esc(cp.book)}, Through Lesson ${esc(cp.lesson)}<br>
+  ${new Date().toLocaleDateString()}
+</div>
+<p>Dear Family,</p>
+<p>Here is an update on ${esc(studentName)}'s progress in our BUILD reading program.</p>
+<p>${opening}</p>
+${newlySection}
+${practicingSection}
+<div class="sig">Sincerely,<br><br>${esc(teacherName)}</div>
+</body></html>`;
+
+  const w = window.open("", "_blank");
+  if (!w) { alert("Please allow pop-ups for this site to open the letter."); return; }
+  w.document.write(html);
+  w.document.close();
+}
+
+/* ============================================================
    GROWTH TAB
    ============================================================ */
 function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
@@ -1335,7 +1416,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
   const chartData = studentEntries.map((e) => {
     const cp = cps.byId[e.checkpointId] || { label: e.checkpointId };
     const row = { name: cp.label.replace("Checkpoint ", "CP") };
-    AREA_LABELS_CHART.forEach((label, i) => {
+    AREA_LABELS.forEach((label, i) => {
       row[label] = e.maxes[i] ? Math.round((e.scores[i] / e.maxes[i]) * 100) : 0;
     });
     const cum = cumulativeMasteryPct(masteryLog || [], studentId, e.checkpointId, cps.order);
@@ -1374,7 +1455,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
                 <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: "#6b6a67" }} unit="%" />
                 <Tooltip contentStyle={{ fontSize: 13, borderRadius: 6, borderColor: "#E7E2D6" }} />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
-                {AREA_LABELS_CHART.map((label, i) => (
+                {AREA_LABELS.map((label, i) => (
                   <Line
                     key={label}
                     type="monotone"
@@ -1442,7 +1523,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
    any checkpoint, it shows as mastered at every checkpoint after
    that automatically — no re-entry needed.
    ============================================================ */
-function MasteryTab({ students, masteryLog, onLogResult, onClearResult }) {
+function MasteryTab({ students, activeName, masteryLog, onLogResult, onClearResult }) {
   const cps = useCheckpoints();
   const readOnly = useReadOnly();
   const [studentId, setStudentId] = useState(students[0]?.id || "");
@@ -1525,7 +1606,26 @@ function MasteryTab({ students, masteryLog, onLogResult, onClearResult }) {
             <option value="Word">Instant Word only</option>
           </Select>
         </div>
-        <span className="text-xs text-[#8a8880]">{masteredCount} / {rows.length} mastered by this checkpoint</span>
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-[#8a8880]">{masteredCount} / {rows.length} mastered by this checkpoint</span>
+          <button
+            onClick={() =>
+              openParentLetter({
+                studentName: students.find((s) => s.id === studentId)?.name || "your child",
+                teacherName: activeName || "",
+                cp: cps.byId[checkpointId],
+                cps,
+                masteryLog,
+                studentId,
+              })
+            }
+            disabled={!studentId}
+            className="inline-flex items-center gap-1.5 text-xs border border-[#DAD5C6] rounded px-2.5 py-1.5 text-[#4a4944] hover:bg-[#F5F2EA] disabled:opacity-50 transition-colors"
+          >
+            <Printer size={13} strokeWidth={1.75} />
+            Parent letter
+          </button>
+        </div>
       </div>
 
       {visibleRows.length === 0 ? (
