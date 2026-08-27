@@ -71,12 +71,27 @@ const useCheckpoints = () => useContext(CheckpointsContext);
 const ReadOnlyContext = createContext(false);
 const useReadOnly = () => useContext(ReadOnlyContext);
 
-const AREA_LABELS = [
+const AREA_LABELS_EARLY = [
   "Letter/Pattern Recognition",
   "Letter/Pattern Sound",
   "Instant Words",
   "Phonological Awareness",
 ];
+const AREA_LABELS_LATE = [
+  "Letter Pattern Identification",
+  "Word / Sentence Reading",
+  "Instant Words",
+  "Phonological Awareness / Spelling",
+];
+const AREA_LABELS_CHART = [
+  "Letter/Pattern",
+  "Sound / Word Reading",
+  "Instant Words",
+  "Phonological Awareness",
+];
+function areaLabelsFor(cp) {
+  return Number(cp.lesson) >= 50 ? AREA_LABELS_LATE : AREA_LABELS_EARLY;
+}
 const AREA_COLORS = ["#1F3864", "#2E7D32", "#B8860B", "#7B241C"];
 const MASTERY_LINE_COLOR = "#7A4EAB";
 
@@ -1174,7 +1189,7 @@ function LogTab({ students, log, customCheckpoints, onAddCustomCheckpoint, onRem
           <span className="text-xs text-[#6b6a67]">Through Lesson {cp.lesson}</span>
         </div>
         <div className="bg-white p-4 space-y-4">
-          {AREA_LABELS.map((label, i) => (
+        {areaLabelsFor(cp).map((label, i) => (
             <div key={i} className="flex items-center gap-4">
               <span className="text-sm text-[#4a4944] flex-1">{label}</span>
               <input
@@ -1320,7 +1335,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
   const chartData = studentEntries.map((e) => {
     const cp = cps.byId[e.checkpointId] || { label: e.checkpointId };
     const row = { name: cp.label.replace("Checkpoint ", "CP") };
-    AREA_LABELS.forEach((label, i) => {
+    AREA_LABELS_CHART.forEach((label, i) => {
       row[label] = e.maxes[i] ? Math.round((e.scores[i] / e.maxes[i]) * 100) : 0;
     });
     const cum = cumulativeMasteryPct(masteryLog || [], studentId, e.checkpointId, cps.order);
@@ -1359,7 +1374,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
                 <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: "#6b6a67" }} unit="%" />
                 <Tooltip contentStyle={{ fontSize: 13, borderRadius: 6, borderColor: "#E7E2D6" }} />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
-                {AREA_LABELS.map((label, i) => (
+                {AREA_LABELS_CHART.map((label, i) => (
                   <Line
                     key={label}
                     type="monotone"
