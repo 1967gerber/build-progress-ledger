@@ -20,26 +20,26 @@ const BOOK_COLOR = {
 
 const CHECKPOINTS = [
   { id: "1",     label: "Checkpoint 1",     book: "Book 1", lesson: 5,   maxes: [4, 4, 5, 5] },
-  { id: "2",     label: "Checkpoint 2",     book: "Book 1", lesson: 10,  maxes: [5, 5, 5, 5] },
-  { id: "3",     label: "Checkpoint 3",     book: "Book 1", lesson: 15,  maxes: [5, 5, 5, 5] },
-  { id: "4",     label: "Checkpoint 4",     book: "Book 1", lesson: 20,  maxes: [5, 5, 5, 5] },
-  { id: "5",     label: "Checkpoint 5",     book: "Book 1", lesson: 25,  maxes: [5, 5, 5, 5] },
-  { id: "5alt",  label: "Checkpoint 5 (Alt)", book: "Book 1", lesson: 25, maxes: [5, 5, 5, 5] },
-  { id: "6",     label: "Checkpoint 6",     book: "Book 1", lesson: 30,  maxes: [5, 5, 5, 5] },
-  { id: "7",     label: "Checkpoint 7",     book: "Book 2", lesson: 35,  maxes: [5, 5, 5, 5] },
-  { id: "8",     label: "Checkpoint 8",     book: "Book 2", lesson: 40,  maxes: [5, 5, 5, 5] },
-  { id: "9",     label: "Checkpoint 9",     book: "Book 2", lesson: 45,  maxes: [5, 5, 5, 5] },
-  { id: "10",    label: "Checkpoint 10",    book: "Book 2", lesson: 50,  maxes: [5, 5, 5, 5] },
-  { id: "11",    label: "Checkpoint 11",    book: "Book 2", lesson: 55,  maxes: [5, 5, 5, 5] },
-  { id: "12",    label: "Checkpoint 12",    book: "Book 2", lesson: 60,  maxes: [5, 5, 5, 5] },
-  { id: "13",    label: "Checkpoint 13",    book: "Book 3", lesson: 65,  maxes: [5, 5, 5, 5] },
-  { id: "14",    label: "Checkpoint 14",    book: "Book 3", lesson: 70,  maxes: [5, 5, 5, 5] },
-  { id: "15",    label: "Checkpoint 15",    book: "Book 3", lesson: 75,  maxes: [5, 5, 5, 5] },
-  { id: "16",    label: "Checkpoint 16",    book: "Book 3", lesson: 80,  maxes: [5, 5, 5, 5] },
-  { id: "17",    label: "Checkpoint 17",    book: "Book 3", lesson: 85,  maxes: [5, 5, 5, 5] },
+  { id: "2",     label: "Checkpoint 2",     book: "Book 1", lesson: 10,  maxes: [4, 4, 5, 5] },
+  { id: "3",     label: "Checkpoint 3",     book: "Book 1", lesson: 15,  maxes: [8, 8, 10, 5] },
+  { id: "4",     label: "Checkpoint 4",     book: "Book 1", lesson: 20,  maxes: [4, 4, 5, 5] },
+  { id: "5",     label: "Checkpoint 5",     book: "Book 1", lesson: 25,  maxes: [4, 4, 5, 5] },
+  { id: "5alt",  label: "Checkpoint 5 (Alt)", book: "Book 1", lesson: 25, maxes: [4, 4, 5, 5] },
+  { id: "6",     label: "Checkpoint 6",     book: "Book 1", lesson: 30,  maxes: [8, 8, 10, 5] },
+  { id: "7",     label: "Checkpoint 7",     book: "Book 2", lesson: 35,  maxes: [4, 4, 5, 5] },
+  { id: "8",     label: "Checkpoint 8",     book: "Book 2", lesson: 40,  maxes: [4, 4, 5, 5] },
+  { id: "9",     label: "Checkpoint 9",     book: "Book 2", lesson: 45,  maxes: [8, 8, 10, 5] },
+  { id: "10",    label: "Checkpoint 10",    book: "Book 2", lesson: 50,  maxes: [4, 4, 5, 5] },
+  { id: "11",    label: "Checkpoint 11",    book: "Book 2", lesson: 55,  maxes: [4, 4, 5, 5] },
+  { id: "12",    label: "Checkpoint 12",    book: "Book 2", lesson: 60,  maxes: [4, 4, 10, 5] },
+  { id: "13",    label: "Checkpoint 13",    book: "Book 3", lesson: 65,  maxes: [4, 4, 5, 5] },
+  { id: "14",    label: "Checkpoint 14",    book: "Book 3", lesson: 70,  maxes: [4, 4, 5, 5] },
+  { id: "15",    label: "Checkpoint 15",    book: "Book 3", lesson: 75,  maxes: [4, 4, 10, 5] },
+  { id: "16",    label: "Checkpoint 16",    book: "Book 3", lesson: 80,  maxes: [4, 4, 5, 5] },
+  { id: "17",    label: "Checkpoint 17",    book: "Book 3", lesson: 85,  maxes: [4, 4, 5, 5] },
   { id: "18",    label: "Checkpoint 18",    book: "Book 3", lesson: 90,  maxes: [5, 5, 10, 5] },
-  { id: "19",    label: "Checkpoint 19",    book: "Book 3", lesson: 95,  maxes: [5, 5, 10, 5] },
-  { id: "20",    label: "Checkpoint 20",    book: "Book 3", lesson: 100, maxes: [5, 5, 5, 5] },
+  { id: "19",    label: "Checkpoint 19",    book: "Book 3", lesson: 95,  maxes: [4, 4, 0, 5] },
+  { id: "20",    label: "Checkpoint 20",    book: "Book 3", lesson: 100, maxes: [4, 4, 0, 5] },
 ];
 
 const CP_BY_ID_BASE = Object.fromEntries(CHECKPOINTS.map((c) => [c.id, c]));
@@ -70,12 +70,39 @@ const useCheckpoints = () => useContext(CheckpointsContext);
 const ReadOnlyContext = createContext(false);
 const useReadOnly = () => useContext(ReadOnlyContext);
 
-const AREA_LABELS = [
+// The four assessed areas change name as the books progress.
+// Lessons 5-45 assess letters; 50-70 shift to word/sentence reading;
+// 75-100 also swap Phonological Awareness for Spelling.
+const AREA_LABELS_EARLY = [
   "Letter/Pattern Recognition",
   "Letter/Pattern Sound",
   "Instant Words",
   "Phonological Awareness",
 ];
+const AREA_LABELS_MID = [
+  "Word Reading",
+  "Sentence Reading",
+  "Instant Words",
+  "Phonological Awareness",
+];
+const AREA_LABELS_LATE = [
+  "Word Reading",
+  "Sentence Reading",
+  "Instant Words",
+  "Spelling",
+];
+const AREA_LABELS_CHART = [
+  "Letter/Pattern",
+  "Sound / Word Reading",
+  "Instant Words",
+  "Phon. Awareness / Spelling",
+];
+function areaLabelsFor(cp) {
+  const n = Number(cp.lesson);
+  if (n >= 75) return AREA_LABELS_LATE;
+  if (n >= 50) return AREA_LABELS_MID;
+  return AREA_LABELS_EARLY;
+}
 const AREA_COLORS = ["#1F3864", "#2E7D32", "#B8860B", "#7B241C"];
 const MASTERY_LINE_COLOR = "#7A4EAB";
 
@@ -1182,7 +1209,7 @@ function LogTab({ students, log, customCheckpoints, onAddCustomCheckpoint, onRem
           <span className="text-xs text-[#6b6a67]">Through Lesson {cp.lesson}</span>
         </div>
         <div className="bg-white p-4 space-y-4">
-          {AREA_LABELS.map((label, i) => (
+        {areaLabelsFor(cp).map((label, i) => (cp.maxes[i] === 0 ? null : (
             <div key={i} className="flex items-center gap-4">
               <span className="text-sm text-[#4a4944] flex-1">{label}</span>
               <input
@@ -1196,7 +1223,7 @@ function LogTab({ students, log, customCheckpoints, onAddCustomCheckpoint, onRem
               />
               <span className="text-xs text-[#8a8880] w-12 tabular-nums">/ {cp.maxes[i]}</span>
             </div>
-          ))}
+          )))}
         </div>
         <div className="px-4 py-3 bg-[#FAF8F3] border-t border-[#E7E2D6] flex items-center justify-between">
           <span className="text-sm text-[#4a4944]">Total</span>
@@ -1416,7 +1443,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
   const chartData = studentEntries.map((e) => {
     const cp = cps.byId[e.checkpointId] || { label: e.checkpointId };
     const row = { name: cp.label.replace("Checkpoint ", "CP") };
-    AREA_LABELS.forEach((label, i) => {
+    AREA_LABELS_CHART.forEach((label, i) => {
       row[label] = e.maxes[i] ? Math.round((e.scores[i] / e.maxes[i]) * 100) : 0;
     });
     const cum = cumulativeMasteryPct(masteryLog || [], studentId, e.checkpointId, cps.order);
@@ -1455,7 +1482,7 @@ function GrowthTab({ students, entries, onDeleteEntry, masteryLog }) {
                 <YAxis domain={[0, 100]} tick={{ fontSize: 12, fill: "#6b6a67" }} unit="%" />
                 <Tooltip contentStyle={{ fontSize: 13, borderRadius: 6, borderColor: "#E7E2D6" }} />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
-                {AREA_LABELS.map((label, i) => (
+                {AREA_LABELS_CHART.map((label, i) => (
                   <Line
                     key={label}
                     type="monotone"
@@ -1575,7 +1602,7 @@ function MasteryTab({ students, activeName, masteryLog, onLogResult, onClearResu
     <div>
       <SectionHeader
         title="Mastery"
-        subtitle="Log a result for a specific letter name, letter sound, or word. Letters are tracked separately for Name and Sound, since a student can know one before the other. Once correct, an item stays marked mastered at every later checkpoint automatically — click the same button again to undo a mistake, or use \u201cFix at CPx\u201d to jump back to where it was first marked."
+        subtitle="Log a result for a specific letter name, letter sound, or word. Letters are tracked separately for Name and Sound, since a student can know one before the other. Once correct, an item stays marked mastered at every later checkpoint automatically — click the same button again to undo a mistake, or use &ldquo;Fix at CPx&rdquo; to jump back to where it was first marked."
       />
 
       <div className="grid sm:grid-cols-2 gap-4 mb-4">
