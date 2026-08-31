@@ -1,0 +1,4 @@
+# BUILD Progress Ledger — a private tool for teachers, behind a sign-in.
+# There is nothing here for search engines to index.
+User-agent: *
+Disallow: /
