@@ -824,14 +824,19 @@ function AllTeachersModal({ onClose, onView }) {
 /* ============================================================
    AUTH GATE — real email/password accounts via Supabase Auth
    ============================================================ */
-// Flip to true to reopen public account creation.
-const ALLOW_SIGNUP = false;
+// Account creation is open, but only to someone who has the access code below.
+// Change SIGNUP_CODE to revoke access for anyone who has been given the old one.
+// Note: this code travels in the app's JavaScript, so treat it as a deterrent
+// against a stray link, not as protection against a determined attacker.
+const ALLOW_SIGNUP = true;
+const SIGNUP_CODE = "GreeneBUILD26";
 
 function AuthGate({ error, setError }) {
   const [mode, setMode] = useState("signin"); // "signin" | "signup"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [accessCode, setAccessCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [localError, setLocalError] = useState("");
   const [checkEmail, setCheckEmail] = useState(false);
@@ -841,6 +846,10 @@ function AuthGate({ error, setError }) {
     setError("");
     if (!email.trim() || !password) { setLocalError("Enter an email and password."); return; }
     if (mode === "signup" && !displayName.trim()) { setLocalError("Enter your name."); return; }
+    if (mode === "signup" && accessCode.trim() !== SIGNUP_CODE) {
+      setLocalError("That access code isn't right. Check with your administrator.");
+      return;
+    }
     setBusy(true);
     if (mode === "signup" && !ALLOW_SIGNUP) { setBusy(false); setLocalError("New account creation is closed."); return; }
     if (mode === "signup") {
@@ -902,6 +911,17 @@ function AuthGate({ error, setError }) {
         <div className="bg-white border border-[#E7E2D6] rounded-lg p-5 shadow-sm space-y-3">
           {mode === "signup" && (
             <div>
+              <label className="block text-xs uppercase tracking-wide text-[#8a8880] mb-1.5">Access code</label>
+              <input
+                value={accessCode}
+                onChange={(e) => setAccessCode(e.target.value)}
+                placeholder="Provided by your administrator"
+                className="w-full border border-[#DAD5C6] rounded px-3 py-2.5 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#1F3864] focus:border-[#1F3864]"
+              />
+            </div>
+          )}
+          {mode === "signup" && (
+            <div>
               <label className="block text-xs uppercase tracking-wide text-[#8a8880] mb-1.5">Your name</label>
               <input
                 value={displayName}
@@ -949,6 +969,7 @@ function AuthGate({ error, setError }) {
                 <button onClick={() => { setMode("signup"); setLocalError(""); }} className="text-[#1F3864] underline underline-offset-2">
                   Create an account
                 </button>
+                {" "}\u2014 you will need the access code from your administrator.
               </>
             ) : (
               <>Accounts are set up by your administrator.</>
